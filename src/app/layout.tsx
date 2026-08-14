@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 
-const playfairDisplay = Playfair_Display({
+/* Sora Bold — títulos */
+const soraHeading = Sora({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["700"],
   variable: "--font-heading",
 });
 
-const montserrat = Montserrat({
+/* Sora Regular — textos corridos */
+const soraBody = Sora({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
   variable: "--font-body",
 });
 
 export const metadata: Metadata = {
-  title: "Patricia Souza",
-  description: "Links úteis de Patricia Souza.",
+  title: "Active Pilates",
+  description: "Links úteis do Active Pilates.",
   icons: {
-    icon: [{ url: "/profile.jpg", type: "image/jpeg" }],
-    apple: [{ url: "/profile.jpg", type: "image/jpeg" }],
+    icon: [{ url: "/active-pilates.png", type: "image/png" }],
+    apple: [{ url: "/active-pilates.png", type: "image/png" }],
   },
 };
 
@@ -34,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${playfairDisplay.variable} ${montserrat.variable}`}
+      className={`${soraHeading.variable} ${soraBody.variable}`}
     >
       <body className="font-body antialiased">{children}</body>
     </html>

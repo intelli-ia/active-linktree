@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #F5EFE2;
-  --surface: #1E1E1E;
-  --surface-deep: #181818;
-  --sage: #90C3A4;
-  --sage-light: #A8D4B8;
-  --sage-deep: #7FB094;
-  --sage-text: #4E7C61;
-  --text: #1E1E1E;
-  --text-on-dark: #F5F3EF;
-  --text-muted: #6B675F;
-  --text-subtle: #9C978C;
+  /* Fundo do linktree */
+  --bg: #FFFFFF;
+  /* Cor secundária — superfícies dos blocos */
+  --surface: #000000;
+  --surface-deep: #000000;
+  /* Cor principal */
+  --gold: #CF9D2F;
+  --gold-light: #E0B655;
+  --gold-deep: #B0851F;
+  --text: #000000;
+  /* Textos corridos sobre superfície escura */
+  --text-on-dark: #FFFFFF;
+  --text-muted: #000000;
+  --text-subtle: #000000;
   --white: #FFFFFF;
 }
 
@@ -43,7 +46,7 @@ html {
 }
 
 ::selection {
-  background: var(--sage);
+  background: var(--gold);
   color: var(--surface-deep);
 }
 
@@ -71,4 +74,26 @@ html {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Seta que respira apontando para o bloco — discreta, sem virar distracao */
+@keyframes nudge-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.animate-nudge-down {
+  display: inline-block;
+  animation: nudge-down 1.9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-nudge-down {
+    animation: none;
+  }
 }
