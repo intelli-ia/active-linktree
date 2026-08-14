@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #F5EFE2;
+  --surface: #1E1E1E;
+  --surface-deep: #181818;
+  --sage: #90C3A4;
+  --sage-light: #A8D4B8;
+  --sage-deep: #7FB094;
+  --sage-text: #4E7C61;
+  --text: #1E1E1E;
+  --text-on-dark: #F5F3EF;
+  --text-muted: #6B675F;
+  --text-subtle: #9C978C;
+  --white: #FFFFFF;
+}
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100dvh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface);
+  border-radius: 99px;
+}
+
+::selection {
+  background: var(--sage);
+  color: var(--surface-deep);
+}
+
+/* Grão fino sobre superfícies escuras — dá textura de impresso ao bloco em destaque */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
