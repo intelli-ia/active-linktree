@@ -43,6 +43,6 @@ export const LINKS: LinkItem[] = [
     // Esta versao ja vem enquadrada fechada: qualquer Y acima de 0 come o cabelo da
     // terceira. Ancorado no topo, o corte sai por baixo.
     imagePosition: "50% 0%",
-    href: "https://shre.ink/GzjC",
+    href: "https://encurtadordelinks-intelliai-eo93j8zck.vercel.app/intelliai",
   },
 ];
