@@ -43,7 +43,6 @@ export const LINKS: LinkItem[] = [
     // Esta versao ja vem enquadrada fechada: qualquer Y acima de 0 come o cabelo da
     // terceira. Ancorado no topo, o corte sai por baixo.
     imagePosition: "50% 0%",
-    // TODO: numero do WhatsApp do Active Pilates (o link abaixo ainda e um placeholder)
-    href: "https://api.whatsapp.com/send?phone=&text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida.",
+    href: "https://shre.ink/GzjC",
   },
 ];
